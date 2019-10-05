@@ -1,0 +1,54 @@
+
+<html lang = "en">
+    <head>
+        <meta charset = "utf-8">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <title>This is a document</title>
+      
+    </head>
+    <body>
+        <div id = "app"></div>
+        <script type="text/babel">
+            class Applic extends React.Component{
+                state = {
+                    name : "Erne",
+                    age : 22
+                }
+                enableClick = (e) => {
+                    //console.log(e.target);
+                    this.setState({
+                        name : "Mill",
+                        age : 20
+                        
+                    });
+                    console.log(this.state)
+                }
+                enableMouseOver = (e) => {
+                    console.log(e.target, e.pageX);
+                }
+                enableCopy = (e) => {
+                    console.log("Try and knock yourself down while researching")
+                }
+               
+                render() {
+                    return(
+                        <div className = "app-content">
+                            <h1>Hello guys. This is my first react class</h1>
+                            <p>My name is {this.state.name} and I am {this.state.age}</p>
+                            <button onClick = {this.enableClick}>Click Here</button>
+                            <button onMouseOver = {this.enableMouseOver}>Hover Here</button>
+                            <p onCopy = {this.enableCopy}>What we want to be, with determination we will be</p>
+                           
+                        </div>
+                    )
+                }
+            }
+        ReactDOM.render(<Applic />, document.getElementById("app"));
+        </script>
+        
+    </body>
+</html>
